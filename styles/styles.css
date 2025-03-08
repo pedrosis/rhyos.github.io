@@ -1,0 +1,376 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+}
+
+/* Navbar ocupa toda a largura, mas os itens ficam centralizados */
+.navbar-custom {
+    width: 100%;
+    background-color: rgba(0, 0, 0, var(--navbar-opacity, 0.3)) !important;
+}
+
+.navbar-custom {
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Estado inicial (opacidade baixa) */
+.navbar-transparent {
+    background-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Estado quando o usuário rolar a página (opacidade mais forte) */
+.navbar-solid {
+    background-color: rgba(0, 0, 0, 0.85) !important;
+}
+
+
+/* Ajuste da logo */
+.logo-header {
+    width: 180px;
+}
+
+/* Seções ocupando toda a tela */
+.full-screen {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* Primeira seção */
+.section1 {
+    background-image: url("../assets/images/barragem.jpg");
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: darken;
+}
+
+/* Segunda seção */
+.section2 {
+    background-image: url("../assets/images/barragem2.jpg");
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: darken;
+}
+
+/* Ajuste da logo central */
+.overlay-content {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+/* Ajuste da logo central */
+.logo-center {
+    width: 30rem;
+}
+
+/* Estilo dos itens do menu */
+.menu-items .nav-link {
+    font-size: 0.8rem;
+    margin: 0 20px;
+    color: #fff;
+    font-family: "Inter", sans-serif;
+}
+
+/* Remove estilos antigos que estavam quebrando o colapso do menu */
+.navbar-collapse {
+    display: none;
+    transition: none !important;
+}
+
+.navbar-collapse.show {
+    display: block !important;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.navbar-custom,
+.navbar-toggler {
+    border: none !important;
+}
+
+.description {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    font-size: 2vh;
+    font-family: "Inter", sans-serif;
+}
+
+.expertise {
+	box-shadow: 3px 0 0 0 #ff6600be, -2px 0 0 0 #ff6600be;
+	background: #ff6600be;
+	display: inline;
+	padding: 1px 0 1px 0 !important;
+	position: relative;
+    color:#FFF;
+}
+
+/* Estilo da segunda seção */
+.section2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Garante que a seção ocupe pelo menos a altura total da tela */
+    padding: 50px 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    background-blend-mode: darken; /* Ajuste conforme necessário */
+}
+
+/* Ajuste do container para alinhar os cards no centro verticalmente */
+.section2 .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Garantir que o background acompanhe os cards na versão mobile */
+@media (max-width: 768px) {
+    .section2 {
+        min-height: auto; /* Remove a altura mínima fixa */
+        height: auto; /* Permite que a seção cresça conforme o conteúdo */
+        padding-bottom: 50px; /* Evita que os cards fiquem muito próximos do rodapé */
+    }
+
+    .overlay-content {
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+    }
+
+    .logo-center {
+        width: 20rem;
+    }
+
+    .description {
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: #fff;
+        font-size: 1.8vh;
+    }
+
+    .arrow-down-anchor {
+        margin: 0;
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+}
+
+/* Estilo dos cards */
+.card {
+    border: none !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    overflow: hidden; /* Garante que nada vaze */
+    font-family: "Inter", sans-serif;
+}
+
+/* Efeito de hover no card */
+.card:hover {
+    /* transform: translateY(-10px); */
+    transform: scale(105%);
+}
+
+/* Imagem dentro do card */
+.card-img-top {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 200px; /* Mantém o tamanho uniforme */
+    object-fit: cover; /* Faz a imagem preencher o espaço */
+    display: block; /* Remove espaços extras */
+}
+
+
+/* Gradiente na parte inferior da section1 */
+.section1::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px; /* Ajuste conforme necessário */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, black 100%);
+    pointer-events: none;
+}
+
+/* Gradiente na parte superior da section2 */
+.section2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px; /* Ajuste conforme necessário */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, black 100%);
+    pointer-events: none;
+}
+
+/* Gradiente na parte inferior da section2 */
+.section2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px; /* Ajuste conforme necessário */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, black 100%);
+    pointer-events: none;
+}
+
+.card-body {
+    padding: 0; /* Remove qualquer espaçamento interno */
+    text-align: center; /* Centraliza o texto */
+    background-color:  rgb(0, 0, 0);
+}
+
+.card-title {
+    font-weight: 600;
+    text-align: center; /* Centraliza o texto */
+    padding: 10px;
+    font-size: 2vh;
+    color: #ffffff !important;
+}
+
+/* Gradiente na parte superior da section3 */
+.section3::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px; /* Ajuste conforme necessário */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, black 100%);
+    pointer-events: none;
+}
+
+/* Seção de Contato */
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribui conteúdo e footer */
+    align-items: center;
+    text-align: center;
+    background-image: url("../assets/images/barragem4.jpg");
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 50px 20px;
+    height: 100vh; /* Mantém a tela toda ocupada */
+}
+
+/* Botão do WhatsApp */
+.whatsapp-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background-color: #25D366;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.whatsapp-button:hover {
+    background-color: #1ebe5d;
+}
+
+.whatsapp-button img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Estilo do e-mail */
+.email-contact {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+/* Footer dentro da própria seção */
+.site-footer {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.548);
+    color: white;
+    text-align: center;
+    padding: 15px 0px 0px 0px;
+}
+
+.contact-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.site-footer {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* Gradiente na parte superior da section2 */
+.contact-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px; /* Ajuste conforme necessário */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, black 100%);
+    pointer-events: none;
+}
+
+.get-in-touch {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.whatsapp-button{
+    font-weight: 600 !important;
+}
+
+.or-email {
+    padding-top: 15px;
+}
+
+.contact-email {
+    font-weight: 700;
+}
